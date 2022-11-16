@@ -1,1 +1,2 @@
-# Book Shop
+# Book Shop Task
+>**Book Arena is an online book shop where a user can order for programming books. The user can look through the books' catalog, see the description of a particular book, add a book to the bag, choose the appropriate date and address to deliver. This is one of the @rolling-scopes-school *[Javascript/Front-end Mentoring Program](https://github.com/rolling-scopes-school/js-fe-course-en)* personal tasks / projects**
