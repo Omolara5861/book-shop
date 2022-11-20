@@ -190,7 +190,7 @@ function featured() {
     
                     <a class="swiper-slide box">
                         <div class="image">
-                            <img src="image/effective_js.jpg" alt="">
+                            <img src="images/effective_js.jpg" alt="">
                         </div>
                         <div class="content">
                             <h3>new featured</h3>
@@ -209,7 +209,7 @@ function featured() {
     
                     <a class="swiper-slide box">
                         <div class="image">
-                            <img src="image/programming_ts.jpg" alt="">
+                            <img src="images/programming_ts.jpg" alt="">
                         </div>
                         <div class="content searched-content">
                             <h3>new featured</h3>
@@ -228,7 +228,7 @@ function featured() {
     
                     <a class="swiper-slide box">
                         <div class="image">
-                            <img src="image/secret_of_the_js_ninja.png" alt="">
+                            <img src="images/secret_of_the_js_ninja.png" alt="">
                         </div>
                         <div class="content searched-content">
                             <h3>new featured</h3>
@@ -255,7 +255,7 @@ function featured() {
     
                     <a class="swiper-slide box">
                         <div class="image">
-                            <img src="image/js_good_part.jpg" alt="">
+                            <img src="images/js_good_part.jpg" alt="">
                         </div>
                         <div class="content searched-content">
                             <h3>new featured</h3>
@@ -274,7 +274,7 @@ function featured() {
     
                     <a class="swiper-slide box">
                         <div class="image">
-                            <img src="image/node_js_in_action.jpg" alt="">
+                            <img src="images/node_js_in_action.jpg" alt="">
                         </div>
                         <div class="content searched-content">
                             <h3>new featured</h3>
@@ -293,7 +293,7 @@ function featured() {
     
                     <a class="swiper-slide box">
                         <div class="image">
-                            <img src="image/learning_react.jpg" alt="">
+                            <img src="images/learning_react.jpg" alt="">
                         </div>
                         <div class="content searched-content">
                             <h3>new featured</h3>
