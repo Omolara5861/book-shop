@@ -5,14 +5,222 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../book_catalog/style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Arena | Best Online Bookstore | Order Page</title>
 </head>
 
-<body>
+<body class="body">
+    <!-- header section starts  -->
 
-    <script src="js/script.js"></script>
+    <header class="header">
+
+        <div class="header-1">
+
+            <a href="#" class="logo"> <i class="fas fa-book"></i> book arena </a>
+
+            <div class="shopping-cart1 icons" data-book-count="0">
+                <span class=" err-msg cart-icon"><i class="fa-solid fa-bags-shopping"></i></span>
+            </div>
+
+        </div>
+
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="../../index.html">home</a>
+                <a href="../../index.html#featured">featured</a>
+                <a href="../book_catalog/index.html">catalog</a>
+                <a href="../bag/index.html">Bag</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- bottom navbar  -->
+
+    <nav class="bottom-navbar">
+        <a href="../../index.html" class="fas fa-home"></a>
+        <a href="../../index.html#featured" class="fas fa-list"></a>
+        <a href="../book_catalog/index.html" class="fas fa-tags"></a>
+        <a href="../bag/index.html" class="fa-solid fa-bags-shopping"></a>
+    </nav>
+    <main>
+        <div class="wrapper">
+            <div class="checkout_wrapper">
+                <div class="product_info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAfrdrLGljVPMcE1nFbMh1hTLTV-w0l_lhWQ&usqp=CAU"
+                        alt="product">
+                    <div class="content">
+                        <h3>Puma Men's <br />Sneakers</h3>
+                        <p>$50</p>
+                    </div>
+                </div>
+                <div class="checkout-form">
+                    <h2>Order Details</h2>
+                    <form id="checkout-form">
+                        <!--Account Information Start-->
+                        <h4>Account</h4>
+                        <div class="input_group">
+                            <div class="input_box">
+                                <input type="text" minlength="4"  name="name" placeholder=" Name" required class="name" >
+                                <i class="fa fa-user icon" id="name-icon"></i>
+                            </div>
+                            <div class="input_box">
+                                <input type="text" minlength="5" name="surname" placeholder="Surname" required class="name">
+                                <i class="fa fa-user icon" id="surname-icon"></i>
+                            </div>
+                        </div>
+                        <div class="e-container" >
+                            <div class="one"><span class="err-msg" id="name-error"></span></div>
+                            <div class="two"><span class="err-msg" id="surname-error"></span></div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input_box">
+                                <input type="date" name="date" placeholder="Delivery Date" required class="name">
+                                <i class="fa fa-calendar icon" id="date-icon" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <span class=" err-msg" id="date-error"></span>
+                        <!--Account Information End-->
+
+                        <!--Address Information End-->
+                        <h4>Address</h4>
+                        <div class="input_group">
+                            <div class="input_box">
+                                <input type="text" minlength="5" name="street" placeholder="Street" required class="name">
+                                <i class="fa fa-map-marker icon" id="street-icon" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <span class=" err-msg" id="street-error"></span>
+                        <div class="input_group">
+                            <div class="input_box">
+                                <div class="input_box">
+                                    <input type="number" name="houseNo" placeholder="House No" required class="name">
+                                    <i class=" fa fa-house icon" id="house-no-icon"
+                                    aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="input_box">
+                                <input type="text" name="flatNo" placeholder="Flat No" required class="name">
+                                <i class="fa fa-house-signal icon" id="flat-no-icon" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="e-container" >
+                            <div class="one"><span class="err-msg" id="house-no-error"></span>
+                            </div>
+                            <div class="two"><span class=" err-msg" id="flat-no-error" ></span></div>
+                        </div>
+                        <!--Address Information End-->
+
+                        <!--Payment Details Start-->
+                        <div class="input_group">
+                            <div class="input_box">
+                                <h4>Payment Mode</h4>
+                                <input type="radio" name="pay" class="radio" id="bc1" required>
+                                <label for="bc1"><span>
+                                        <i class="fa fa-money" aria-hidden="true"></i>Cash</span></label>
+                                <input type="radio" name="pay" class="radio" id="bc2" required>
+                                <label for="bc2"><span>
+                                        <i class="fa fa-credit-card "></i>Card</span></label>
+                            </div>
+                        </div>
+                        <span class=" err-msg" id="payment-error"></span>
+                        <!--Payment Details End-->
+
+                        <!-- Gift Option -->
+                        <h4>Choose 2 gifts: (optional)</h4>
+                        <div class="check_box_wrapper">
+                            <div class="check_box_group1">
+                                <div class="check_box first">
+                                    <div class="checkbox path">
+                                        <input type="checkbox" name="" class="name" id="provide-price-slash"> <svg
+                                            viewBox="0 0 21 21">
+                                            <path
+                                                d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <label for="provide-price-slash">Provide 2% discount to the next time</label>
+                                </div>
+                                <div class="check_box">
+                                    <div class="checkbox path">
+                                        <input type="checkbox" name="" class="name" id="branded-pen-or-pencil">
+                                        <svg viewBox="0 0 21 21">
+                                            <path
+                                                d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <label for="branded-pen-or-pencil">Branded Pen or Pencil</label>
+                                </div>
+                            </div>
+                            <div class="check_box_group2">
+                                <div class="check_box first">
+                                    <div class="checkbox path">
+                                        <input type="checkbox" name="" class="name" id="pack-as-gift">
+                                        <svg viewBox="0 0 21 21">
+                                            <path
+                                                d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <label for="pack-as-gift">Pack as a Gift</label>
+                                </div>
+                                <div class="check_box">
+                                    <div class="checkbox path">
+                                        <input type="checkbox" name="" class="name" id="add-postcard"> <svg
+                                            viewBox="0 0 21 21">
+                                            <path
+                                                d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <label for="add-postcard">Add Postcard</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- Gift Option Ends -->
+
+                        <div class="input_group">
+                            <div class="input_box">
+                                <a href="../../index.html">Cancel Order</a>
+                                <button id="order-btn" type="submit" class="disabled" disabled>Order Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-container off-screen" id="info-container">
+            <div class="info-card">
+                <div class="check-wrapper">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="content">
+                    <b>Hi Matt</b>
+                    <p>Your order has been received. The delivery address is Amazing street house 3 flat 10!
+                    </p>
+                </div>
+
+                <div class="angle-wrapper">
+                    <button id="angles-btn"><i class="fa-solid fa-angles-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
