@@ -341,13 +341,68 @@ function newsLetter() {
     document.body.appendChild(fragment);
 }
 
+// icons section starts
 function iconsContainer() {
+    const section = document.createElement('section');
+    section.className = 'icons-container';
 
+    section.innerHTML = `
+    <div class="icons">
+            <i class="fas fa-shipping-fast"></i>
+            <div class="content">
+                <h3>free shipping</h3>
+                <p>order over $100</p>
+            </div>
+        </div>
+        <div class="icons">
+            <i class="fas fa-lock"></i>
+            <div class="content">
+                <h3>secure payment</h3>
+                <p>100 secure payment</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-redo-alt"></i>
+            <div class="content">
+                <h3>easy returns</h3>
+                <p>10 days returns</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-headset"></i>
+            <div class="content">
+                <h3>24/7 support</h3>
+                <p>call us anytime</p>
+            </div>
+        </div>
+    `;
+    let fragment = new DocumentFragment();
+    fragment.appendChild(section);
+    document.body.appendChild(fragment);
 }
+// icons section ends
 
+// footer section starts 
 function footer() {
+    const footer = document.createElement('footer');
+    const creditContainer = document.createElement('div');
 
+    footer.className = 'footer';
+    creditContainer.className = 'credit';
+
+    creditContainer.innerHTML = `
+    created by <span><a href="https://omolara5861.github.io/"
+                    target="_blank">laravel</a></span> | all rights reserved!`;
+    
+    footer.appendChild(creditContainer);
+    
+    let fragment = new DocumentFragment();
+    fragment.appendChild(footer);
+    document.body.appendChild(fragment);
 }
+// footer section starts 
 
 function renderHomePage() {
     createHeader();
@@ -362,55 +417,55 @@ function renderHomePage() {
 
 renderHomePage();
 
-// let searchForm = document.querySelector('.search-form');
+let searchForm = document.querySelector('.search-form');
 
 
 
-// window.onscroll = () => {
+window.onscroll = () => {
 
-//     if (window.scrollY > 80) {
-//         document.querySelector('.header .header-2').classList.add('active');
-//     } else {
-//         document.querySelector('.header .header-2').classList.remove('active');
-//     }
+    if (window.scrollY > 80) {
+        document.querySelector('.header .header-2').classList.add('active');
+    } else {
+        document.querySelector('.header .header-2').classList.remove('active');
+    }
 
-// }
+}
 
-// window.onload = () => {
+window.onload = () => {
 
-//     if (window.scrollY > 80) {
-//         document.querySelector('.header .header-2').classList.add('active');
-//     } else {
-//         document.querySelector('.header .header-2').classList.remove('active');
-//     }
-// }
+    if (window.scrollY > 80) {
+        document.querySelector('.header .header-2').classList.add('active');
+    } else {
+        document.querySelector('.header .header-2').classList.remove('active');
+    }
+}
 
-// function liveSearch() {
-//     // Locate the card elements
-//     let content = document.querySelectorAll('.searched-content')
-//     // Locate the search input
-//     let search_query = document.getElementById("search-box").value;
-//     // Loop through the content
-//     for (var i = 0; i < content.length; i++) {
-//         // If the text is within the card...
-//         if (content[i].textContent.toLowerCase()
-//             // ...and the text matches the search query...
-//             .includes(search_query.toLowerCase())) {
-//             // ...remove the `.is-hidden` class.
-//             content[i].classList.remove("is-hidden");
-//         } else {
-//             // Otherwise, add the class.
-//             content[i].classList.add("is-hidden");
-//         }
-//     }
-// }
+function liveSearch() {
+    // Locate the card elements
+    let content = document.querySelectorAll('.searched-content')
+    // Locate the search input
+    let search_query = document.getElementById("search-box").value;
+    // Loop through the content
+    for (var i = 0; i < content.length; i++) {
+        // If the text is within the card...
+        if (content[i].textContent.toLowerCase()
+            // ...and the text matches the search query...
+            .includes(search_query.toLowerCase())) {
+            // ...remove the `.is-hidden` class.
+            content[i].classList.remove("is-hidden");
+        } else {
+            // Otherwise, add the class.
+            content[i].classList.add("is-hidden");
+        }
+    }
+}
 
-// // A little delay
-// let typingTimer;
-// let typeInterval = 500; // Half a second
-// let searchInput = document.getElementById('search-box');
+// A little delay
+let typingTimer;
+let typeInterval = 500; // Half a second
+let searchInput = document.getElementById('search-box');
 
-// searchInput.addEventListener('keyup', () => {
-//     clearTimeout(typingTimer);
-//     typingTimer = setTimeout(liveSearch, typeInterval);
-// });
+searchInput.addEventListener('keyup', () => {
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(liveSearch, typeInterval);
+});
