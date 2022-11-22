@@ -1,9 +1,18 @@
 let orderBtn = document.getElementById('order-btn');
-let noOfBooks = document.getElementById('no-of-books');
+let msg = document.getElementById('alert');
+const shopping_cart1 = document.querySelector('.shopping-cart1');
 
 let bag = JSON.parse(localStorage.getItem('bookData')) || [];
 
+msg.innerHTML = `You have <span id="no-of-books"></span> ${bag.length > 1 ? 'books' : 'book'} in your bag`;
+
+let noOfBooks = document.getElementById('no-of-books');
 noOfBooks.innerText = bag.length;
+
+function calcBookInBag() {
+    shopping_cart1.setAttribute('data-book-count', bag.length);
+}
+calcBookInBag();
 
 let validName =  false;
 let validSurname = false;
@@ -14,6 +23,11 @@ let validFlatNo = false;
 let validPaymentMode = false;
 
 let checkoutForm = document.getElementById('checkout-form');
+let customerName = checkoutForm.name.value;
+let customerStreet = checkoutForm.street.value;
+let customerHouseNo = checkoutForm.houseNo.value;
+let customerFlatNo = checkoutForm.flatNo.value;
+console.log(customerName, customerStreet, customerHouseNo & customerFlatNo);
 
 checkoutForm.name.addEventListener('blur', showNameError)
 
@@ -247,9 +261,18 @@ function showPayError() {
 
 let infoCard = document.getElementById('info-container');
 let anglesBtn = document.getElementById('angles-btn');
+let infoContainer = document.getElementById('order-info');
+
+infoContainer.innerHTML = `
+    <b>Hi ${customerName}</b>
+    <p>Your order has been received. The delivery address is ${customerStreet} street, house ${customerHouseNo} flat ${customerFlatNo}!</p>
+`;
+console.log(customerName, customerStreet, customerHouseNo & customerFlatNo);
+
+
 let showInfo = (e) => {
     e.preventDefault();
-    checkoutForm.reset();
+    // checkoutForm.reset();
     bag = [];
     localStorage.setItem('bookData', JSON.stringify(bag));
     calcBookInBag();
