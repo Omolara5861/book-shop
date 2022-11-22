@@ -58,3 +58,7 @@ searchInput.addEventListener('keyup', () => {
     clearTimeout(typingTimer);
     typingTimer = setTimeout(liveSearch, typeInterval);
 });
+
+shopping_cart1.onclick = () => {
+    document.location.href = '../pages/bag/index.html';
+}
