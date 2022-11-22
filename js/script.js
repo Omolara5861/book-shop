@@ -1,3 +1,11 @@
+const shopping_cart1 = document.querySelector('.shopping-cart1');
+let bag = JSON.parse(localStorage.getItem('bookData')) || [];
+
+function calcBookInBag() {
+    shopping_cart1.setAttribute('data-book-count', bag.length);
+}
+calcBookInBag();
+
 let searchForm = document.querySelector('.search-form');
 
 

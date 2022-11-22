@@ -22,7 +22,7 @@ function createHeader() {
     <label for="search-box" class="fas fa-search"></label>
     `;
     //Shopping Bag
-    shoppingBag.classList.add('shopping-cart1', 'icons');
+    shoppingBag.classList.add('shopping-cart1');
     shoppingBag.dataset.bookCount = 0;
     shoppingBag.innerHTML = '<span class="cart-icon"><i class="fa-solid fa-bags-shopping"></i></span>';
 
