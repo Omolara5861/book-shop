@@ -1,0 +1,231 @@
+.small-container {
+    max-width: 60%;
+    background: #fff;
+    padding: 20px;
+    font-size: 15px;
+}
+
+
+.title span:last-child {
+    color: #27ae60;
+    font-size: 30px;
+}
+
+.cart-page {
+    margin: 80px auto;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart-info div {
+    align-self: center;
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    background: #27ae60;
+    color: #fff;
+    font-weight: normal;
+}
+
+td {
+    padding: 10px 5px;
+}
+
+td button {
+    background: transparent;
+    color: #EB5757;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+td img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.total-price {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-price table {
+    border-top: 3px solid#27ae60;
+    width: 43%;
+    max-width: 100;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #27ae60;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    margin-right: 25px;
+}
+
+table tr td:last-child,
+table tr th:last-child {
+    text-align: right;
+}
+
+
+.btns-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 50px 10px 0;
+}
+
+.btns-container div {
+    width: 270px;
+}
+.btns-container a:last-child {
+    margin-left: 5px;
+    background: #27ae60;
+}
+.btns-container a:last-child:hover {
+    background: #219150;
+}
+
+.btns-container a:last-child {
+    color: #fff;
+}
+
+.bag-btn {
+        padding: 10px;
+    background: transparent;
+    border: 1px solid #27ae60 !important;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+.bag-btn.bag-btn {
+    transition: all 0.2s linear 0s;
+}
+
+.bag-btn.bag-btn:before {
+    font-family: FontAwesome;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 30px;
+    border-radius: 0 50% 50% 0;
+    transform: scale(0, 1);
+    transform-origin: left center;
+    transition: all 0.2s linear 0s;
+}
+
+.bag-btn.bag-btn.first-btn:before{
+    content: '';
+}
+.bag-btn.bag-btn.middle-btn:before{
+    content: '';
+}
+.bag-btn.bag-btn.last-btn:before{
+    content: '';
+}
+
+.bag-btn.bag-btn:hover {
+    text-indent: 30px;
+}
+
+.bag-btn.bag-btn:hover:before {
+    transform: scale(1, 1);
+    text-indent: 0;
+}
+
+.empty-bag {
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 10px;
+}
+.empty-bag h1 {
+    font-size: 3rem;
+    color: #000000;
+    line-height: 1.2;
+    margin: 20px 0 ;
+    letter-spacing: 0.00em;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+}
+.empty-bag a {
+    display: inline-block;
+    font-style: normal !important;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    background-image: none;
+    border-style: solid;
+    border-radius: 2px;
+    outline: none;
+    -webkit-text-stroke: 0px;
+    transform-origin: center;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-width: 1px;
+    padding: 2rem 3rem !important;
+    color: #ffffff !important;
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+    transition: color 200ms cubic-bezier(0.785, 0.135, 0.15, 0.86), background-color 200ms cubic-bezier(0.785, 0.135, 0.15, 0.86), border-color 200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.empty-bag a:hover {
+    background-color: transparent !important;
+    border-color: #000000 !important;
+    color: #000000 !important;
+}
+
+@media screen and (max-width: 992px) {
+    .small-container {
+        max-width: 90%;
+        font-size: inherit;
+    }
+
+    .total-price table {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .small-container {
+        max-width: 70%;
+        font-size: inherit;
+    }
+}
