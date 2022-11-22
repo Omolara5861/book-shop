@@ -181,7 +181,7 @@ for (show_more_btn of show_more_btns) {
             </div>
             <div class="content2">
                 <img src=${imageLink}
-                    alt=${selectedBook} class="img">
+                    alt=${selectedBook} class="img" ondragstart="popupDragstartHandler(event)" ondrag="ondragHandler(event)" ondragend="popupOndragendHandler(event)" ondragenter="ondragenterHandler(event)" ondragleave="ondragleaveHandler(event)">
                 <div class="content2-footer">
                     <b class="price">Price: $${price}</b>
                     <div>
@@ -259,6 +259,19 @@ function dragstartHandler(ev) {
     ev.dataTransfer.setData('text/html', ev.target.price);
 
 }
+function popupDragstartHandler(ev) {
+    console.log('----------------ondragstart - drag started');
+
+
+    ev.dataTransfer.effectAllowed = "copy";
+    ev.dataTransfer.dropEffect = "copy";
+
+    ev.target.parentNode.parentNode.style.backgroundColor = "#0e1523";
+    ev.target.parentNode.parentNode.style.color = "#f5f5f5";
+
+    ev.dataTransfer.setData('text/html', ev.target.price);
+
+}
 
 function ondragHandler(ev) {
     console.log("----------------ondrag");
@@ -313,5 +326,30 @@ function ondragendHandler(ev) {
     localStorage.setItem('bookData', JSON.stringify(bag));
 
 
+    calcBookInBag();
+}
+function popupOndragendHandler(ev) {
+    console.log("----------------ondragend - drag finished");
+
+    ev.target.parentNode.parentNode.style.backgroundColor = "#fff";
+    ev.target.parentNode.parentNode.style.color = "#000";
+
+
+    let selectedBook = document.querySelector('.title1').textContent;
+    let selectedBookPrice = parseFloat(document.querySelector('.price').textContent.replace(`Price: $`, ''));
+    let selectedBookImgSrc = document.querySelector('img').src;
+    let search = bag.find(b => b.title === selectedBook);
+
+    if (search === undefined) {
+        bag.push({
+            title: selectedBook,
+            price: selectedBookPrice,
+            imgSrc: selectedBookImgSrc
+        })
+    } else {
+        alert(`The book ${selectedBook} has already been added to your shopping bag`);
+        return;
+    }
+    localStorage.setItem('bookData', JSON.stringify(bag));
     calcBookInBag();
 }
