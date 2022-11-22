@@ -1,0 +1,240 @@
+* {
+    text-transform: none !important;
+}
+
+.pop-up {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, .30);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    background: #fff;
+    font-size: 15px;
+    width: 700px;
+}
+
+.pop-up .close-container {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7em;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, .30);
+    translate: all .3s ease-in-out;
+/* box-shadow: 0px 5px 30px rgba(0, 0, 0, .30); */
+}
+
+.pop-up .close-container:hover {
+    cursor: pointer;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    border-top: none;
+    border-left: none;
+    box-shadow: none;
+}
+
+.pop-up .content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 25px;
+}
+
+#popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.pop-up .content1,
+.pop-up .content2 {
+    width: 50%;
+}
+
+.pop-up .content1 {
+    margin-right: 15px;
+    line-height: 20px;
+}
+
+.pop-up .content1 h5 {
+    margin: 10px 0;
+    color: #27ae60;
+}
+.pop-up .content2 img {
+    /* max-width: 100%; */
+    width: 318px;
+    height: 211px;
+    object-fit: cover;
+}
+
+.pop-up .content2 .content2-footer b {
+    align-self: center;
+}
+
+.pop-up .content2 .content2-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pop-up .content2 .content2-footer .bag_btn {
+    position: relative;
+    padding: 10px;
+    width: 150px;
+    height: 40px;
+    border: 0;
+    border-radius: 10px;
+    background: #27ae60;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.pop-up .content2 .content2-footer .bag_btn:hover {
+    background: #219150;
+}
+
+.pop-up .content2 .content2-footer .bag_btn:active{
+    transform: scale(.9);
+
+}
+
+.pop-up .content2 .content2-footer .bag_btn .fa-bags-shopping {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: -12%;
+    font-size: 2em;
+    transform: translate(-50%, -50%);
+}
+
+.pop-up .content2 .content2-footer .bag_btn .fa-book {
+    position: absolute;
+    z-index: 3;
+    top: -25%;
+    left: 52%;
+    font-size: 1.2em;
+    transform: translate(-50%, -50%);
+}
+
+.pop-up .content2 .content2-footer .bag_btn span {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    font-size: .89em;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.pop-up .content2 .content2-footer .bag_btn span.add-to-bag {
+    opacity: 1;
+}
+.pop-up .content2 .content2-footer .bag_btn span.added {
+    opacity: 0;
+}
+.pop-up .content2 .content2-footer .bag_btn.clicked .fa-bags-shopping {
+    animation: bag 1.5s ease-in-out forwards;
+}
+
+@keyframes bag{
+    0% {
+        left: -12%;
+    }
+
+    40%,
+    60% {
+        left: 50%;
+    }
+
+    100% {
+        left: 1100%;
+    }
+}
+.pop-up .content2 .content2-footer .bag_btn.clicked .fa-book {
+    animation: book 1.5s ease-in-out forwards;
+}
+
+@keyframes book{
+    0%,
+    40% {
+        top: -25%;
+    }
+
+    60% {
+        top: 42%;
+        left: 52%;
+    }
+
+    100% {
+        top: 42%;
+        left: 112%;
+    }
+}
+
+.pop-up .content2 .content2-footer .bag_btn.clicked .add-to-bag {
+    animation: txt1 1.5s ease-in-out forwards;
+}
+
+@keyframes txt1{
+    0%{
+        opacity: 1;
+    }
+
+    20%, 100% {
+        opacity: 0;
+    }
+}
+
+.pop-up .content2 .content2-footer .bag_btn.clicked .added {
+    animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes txt2{
+    0%,
+    80% {
+        opacity: 0;;
+    }
+
+    20%, 100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    transition: 0.5s;
+    /* padding: 20px; */
+}
+
+.container#blur.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .pop-up {
+        width: 90%;
+    }
+    .pop-up .content {
+        flex-direction: column;
+    }
+
+    .pop-up .content1,
+    .pop-up .content2 {
+        width: 100%;
+    }
+
+    .pop-up .content2 img{
+        margin-top: 10px;
+        width: 100%;
+    }
+}
