@@ -14,7 +14,7 @@ calcBookInBag();
 
 function generateBagItems() {
     if (bag.length > 0) {
-        title.innerHTML = `Horray! You have <span>${bag.length}</span> books in your bag`;
+        title.innerHTML = `Horray! You have <span>${bag.length}</span> ${bag.length > 1 ? 'books' : 'book'} in your bag`;
         return (cartPage.innerHTML += bag.map(book => {
             let {
                 title
