@@ -1,4 +1,10 @@
 let orderBtn = document.getElementById('order-btn');
+let noOfBooks = document.getElementById('no-of-books');
+
+let bag = JSON.parse(localStorage.getItem('bookData')) || [];
+
+noOfBooks.innerText = bag.length;
+
 let validName =  false;
 let validSurname = false;
 let validDate =  false;
@@ -244,8 +250,13 @@ let anglesBtn = document.getElementById('angles-btn');
 let showInfo = (e) => {
     e.preventDefault();
     checkoutForm.reset();
+    bag = [];
+    localStorage.setItem('bookData', JSON.stringify(bag));
+    calcBookInBag();
     infoCard.classList.remove('off-screen');
     infoCard.classList.add('on-screen');
+    orderBtn.disabled = true;
+    orderBtn.classList.add('disabled');
 }
 orderBtn.addEventListener('click', showInfo);
 
