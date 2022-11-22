@@ -23,11 +23,6 @@ let validFlatNo = false;
 let validPaymentMode = false;
 
 let checkoutForm = document.getElementById('checkout-form');
-let customerName = checkoutForm.name.value;
-let customerStreet = checkoutForm.street.value;
-let customerHouseNo = checkoutForm.houseNo.value;
-let customerFlatNo = checkoutForm.flatNo.value;
-console.log(customerName, customerStreet, customerHouseNo & customerFlatNo);
 
 checkoutForm.name.addEventListener('blur', showNameError)
 
@@ -36,7 +31,6 @@ function showNameError() {
     let allLetters = /^[A-Za-z]+$/;
     let minLength = 4;
     errContainer = document.getElementById('name-error');
-
     if (name.value == null || name.value == '') {
         name.classList.add('invalid');
         document.getElementById('name-icon').classList.add('invalid');
@@ -135,8 +129,8 @@ function showDateError() {
 
 checkoutForm.street.addEventListener('blur', showStreetError)
 
+let street = checkoutForm.street;
 function showStreetError() {
-    let street = checkoutForm.street;
     let minLength = 5;
     errContainer = document.getElementById('street-error');
 
@@ -164,8 +158,8 @@ function showStreetError() {
 
 checkoutForm.houseNo.addEventListener('blur', showHouseNoError)
 
+let houseNo = checkoutForm.houseNo;
 function showHouseNoError() {
-    let houseNo = checkoutForm.houseNo;
     let positiveValue = /^[1-9]+[0-9]*$/;
     errContainer = document.getElementById('house-no-error');
 
@@ -193,8 +187,8 @@ function showHouseNoError() {
 
 checkoutForm.flatNo.addEventListener('blur', showFlatNoError)
 
+let flatNo = checkoutForm.flatNo;
 function showFlatNoError() {
-    let flatNo = checkoutForm.flatNo;
     errContainer = document.getElementById('flat-no-error');
 
     if (flatNo.value == null || flatNo.value == '') {
@@ -263,15 +257,12 @@ let infoCard = document.getElementById('info-container');
 let anglesBtn = document.getElementById('angles-btn');
 let infoContainer = document.getElementById('order-info');
 
-infoContainer.innerHTML = `
-    <b>Hi ${customerName}</b>
-    <p>Your order has been received. The delivery address is ${customerStreet} street, house ${customerHouseNo} flat ${customerFlatNo}!</p>
-`;
-console.log(customerName, customerStreet, customerHouseNo & customerFlatNo);
-
 
 let showInfo = (e) => {
-    e.preventDefault();
+    infoContainer.innerHTML = `
+        <b>Hi ${checkoutForm.name.value}</b>
+        <p>Your order has been received. The delivery address is ${street.value} street, house ${houseNo.value} flat ${flatNo.value}!</p>
+    `;
     // checkoutForm.reset();
     bag = [];
     localStorage.setItem('bookData', JSON.stringify(bag));
@@ -280,6 +271,7 @@ let showInfo = (e) => {
     infoCard.classList.add('on-screen');
     orderBtn.disabled = true;
     orderBtn.classList.add('disabled');
+    e.preventDefault();
 }
 orderBtn.addEventListener('click', showInfo);
 
