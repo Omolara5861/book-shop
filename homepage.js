@@ -13,7 +13,7 @@ function createHeader() {
     header1.className = 'header-1';
     //Logo
     logo.className = 'logo';
-    logo.href = '/';
+    logo.href = 'index.html';
     logo.innerHTML = '<i class="fas fa-book"></i> book arena';
     //Search Form
     searchForm.className = 'search-form';

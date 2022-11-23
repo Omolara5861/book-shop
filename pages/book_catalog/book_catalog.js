@@ -13,7 +13,7 @@ function createHeader() {
     header1.className = 'header-1';
     //Logo
     logo.className = 'logo';
-    logo.href = '/';
+    logo.href = '../../index.html';
     logo.innerHTML = '<i class="fas fa-book"></i> Book arena';
     //Search Form
     searchForm.className = 'search-form';
@@ -35,7 +35,7 @@ function createHeader() {
     <nav class="navbar">
                 <a href="../../index.html">Home</a>
                 <a href="../../index.html#featured">Featured</a>
-                <a href="/">Catalog</a>
+                <a href="index.html">Catalog</a>
                 <a href="../bag/index.html">Bag</a>
             </nav>
     `;
