@@ -1,14 +1,4 @@
-const shopping_cart1 = document.querySelector('.shopping-cart1');
-let bag = JSON.parse(localStorage.getItem('bookData')) || [];
-
-function calcBookInBag() {
-    shopping_cart1.setAttribute('data-book-count', bag.length);
-}
-calcBookInBag();
-
 let searchForm = document.querySelector('.search-form');
-
-
 
 window.onscroll = () => {
 
@@ -58,7 +48,3 @@ searchInput.addEventListener('keyup', () => {
     clearTimeout(typingTimer);
     typingTimer = setTimeout(liveSearch, typeInterval);
 });
-
-shopping_cart1.onclick = () => {
-    document.location.href = '../pages/bag/index.html';
-}

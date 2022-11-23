@@ -416,3 +416,15 @@ function renderHomePage() {
 }
 
 renderHomePage();
+
+const shopping_cart1 = document.querySelector('.shopping-cart1');
+let bag = JSON.parse(localStorage.getItem('bookData')) || [];
+
+function calcBookInBag() {
+    shopping_cart1.setAttribute('data-book-count', bag.length);
+}
+calcBookInBag();
+
+shopping_cart1.onclick = () => {
+    document.location.href = '../pages/bag/index.html';
+}
