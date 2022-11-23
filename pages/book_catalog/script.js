@@ -14,9 +14,9 @@ let generateShop = () => {
             } = x;
             return `
             <div class="card searched-content">
-            <div class="card-content">
+            <div class="card-content" draggable="true" ondragstart="dragstartHandler(event)" ondrag="ondragHandler(event)" ondragend="ondragendHandler(event)" ondragenter="ondragenterHandler(event)" ondragleave="ondragleaveHandler(event)">
                 <img src=${imageLink} alt=${title}
-                    class="card-img" ondragstart="dragstartHandler(event)" ondrag="ondragHandler(event)" ondragend="ondragendHandler(event)" ondragenter="ondragenterHandler(event)" ondragleave="ondragleaveHandler(event)">
+                    class="card-img">
                 <h1 class="card-title">${title}</h1>
                 <div class="card-body">
                     <div class="card-star">
@@ -173,15 +173,15 @@ for (show_more_btn of show_more_btns) {
             <div onclick="toggle()" class="close-container">
             <i class="fa-solid fa-xmark"></i>
         </div>
-        <div class="content">
-            <div class="content1">
+        <div class="content" draggable="true">
+            <div class="content1" draggable="true" ondragstart="dragstartHandler(event)" ondrag="ondragHandler(event)" ondragend="ondragendHandler(event)" ondragenter="ondragenterHandler(event)" ondragleave="ondragleaveHandler(event)">
                 <h3 class="title1">${selectedBook}</h3>
                 <h5>${author}</h5>
                 <p>${description}</p>
             </div>
             <div class="content2">
                 <img src=${imageLink}
-                    alt=${selectedBook} class="img" ondragstart="popupDragstartHandler(event)" ondrag="ondragHandler(event)" ondragend="popupOndragendHandler(event)" ondragenter="ondragenterHandler(event)" ondragleave="ondragleaveHandler(event)">
+                    alt=${selectedBook} class="img">
                 <div class="content2-footer">
                     <b class="price">Price: $${price}</b>
                     <div>
@@ -331,8 +331,8 @@ function ondragendHandler(ev) {
 function popupOndragendHandler(ev) {
     console.log("----------------ondragend - drag finished");
 
-    ev.target.parentNode.parentNode.style.backgroundColor = "#fff";
-    ev.target.parentNode.parentNode.style.color = "#000";
+    ev.target.parentNode.style.backgroundColor = "#fff";
+    ev.target.parentNode.style.color = "#000";
 
 
     let selectedBook = document.querySelector('.title1').textContent;

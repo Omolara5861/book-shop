@@ -66,10 +66,11 @@
     color: #27ae60;
 }
 .pop-up .content2 img {
-    /* max-width: 100%; */
+    max-width: 100%;
     width: 318px;
     height: 211px;
-    /* object-fit: cover; */
+    object-fit: cover;
+
 }
 
 .pop-up .content2 .content2-footer b {

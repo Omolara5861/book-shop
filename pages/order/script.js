@@ -271,13 +271,13 @@ let showInfo = (e) => {
     infoCard.classList.add('on-screen');
     orderBtn.disabled = true;
     orderBtn.classList.add('disabled');
+    checkoutForm.submit();
     e.preventDefault();
 }
-orderBtn.addEventListener('click', showInfo);
+checkoutForm.addEventListener('submit', showInfo);
 
 let hideInfo = () => {
     infoCard.classList.remove('on-screen');
     infoCard.classList.add('off-screen');
-    checkoutForm.submit();
 }
 anglesBtn.addEventListener('click', hideInfo);
