@@ -426,5 +426,5 @@ function calcBookInBag() {
 calcBookInBag();
 
 shopping_cart1.onclick = () => {
-    document.location.href = '../pages/bag/index.html';
+    document.location.href = './pages/bag/index.html';
 }
