@@ -255,7 +255,7 @@ function dragstartHandler(ev) {
 
     ev.target.parentNode.style.backgroundColor = "#0e1523";
     ev.target.parentNode.style.color = "#f5f5f5";
-
+    ev.target.children[3].children[1].style.color = "#f5f5f5";
     ev.dataTransfer.setData('text/html', ev.target.price);
 
 }
@@ -304,6 +304,8 @@ function ondragendHandler(ev) {
 
     ev.target.parentNode.style.backgroundColor = "#fff";
     ev.target.parentNode.style.color = "#000";
+    ev.target.children[3].children[1].style.color = "#000";
+
 
 
     let selectedBookContainer = ev.target.parentNode;
