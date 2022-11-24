@@ -1,24 +1,3 @@
-let searchForm = document.querySelector('.search-form');
-
-window.onscroll = () => {
-
-    if (window.scrollY > 80) {
-        document.querySelector('.header .header-2').classList.add('active');
-    } else {
-        document.querySelector('.header .header-2').classList.remove('active');
-    }
-
-}
-
-window.onload = () => {
-
-    if (window.scrollY > 80) {
-        document.querySelector('.header .header-2').classList.add('active');
-    } else {
-        document.querySelector('.header .header-2').classList.remove('active');
-    }
-}
-
 function liveSearch() {
     // Locate the card elements
     let content = document.querySelectorAll('.searched-content')
