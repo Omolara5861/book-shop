@@ -174,7 +174,7 @@ for (show_more_btn of show_more_btns) {
             <i class="fa-solid fa-xmark"></i>
         </div>
         <div class="content" draggable="true">
-            <div class="content1" draggable="true" ondragstart="dragstartHandler(event)" ondrag="ondragHandler(event)" ondragend="ondragendHandler(event)" ondragenter="ondragenterHandler(event)" ondragleave="ondragleaveHandler(event)">
+            <div class="content1" draggable="true" ondragstart="dragstartHandler(event)" ondrag="ondragHandler(event)" ondragend="popupOndragendHandler(event)" ondragenter="ondragenterHandler(event)" ondragleave="ondragleaveHandler(event)">
                 <h3 class="title1">${selectedBook}</h3>
                 <h5>${author}</h5>
                 <p>${description}</p>
@@ -308,7 +308,8 @@ function ondragendHandler(ev) {
 
 
 
-    let selectedBookContainer = ev.target.parentNode;
+    let selectedBookContainer = ev.target;
+    console.log(selectedBookContainer);
     let selectedBook = selectedBookContainer.children[1].textContent;
     let selectedBookPrice = parseFloat(selectedBookContainer.children[2].children[1].textContent.replace('$', ''));
     let selectedBookImgSrc = selectedBookContainer.children[0].src;
