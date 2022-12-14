@@ -103,7 +103,7 @@ function createMainSection() {
     
                 <div class="btns-container">
                     <a class="bag-btn bag-btn first-btn" href="../book_catalog/index.html" title="Continue Shopping">Continue Shopping</a>
-                    <div>
+                    <div class="btns">
                         <a onclick="clearBag()" class="bag-btn bag-btn middle-btn" href="#" title="Clear Cart">Clear Cart</a>
                         <a class="bag-btn bag-btn last-btn" href="../order/index.html" title="Confirm Order">Confirm Order</a>
                     </div>

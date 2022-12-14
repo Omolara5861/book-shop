@@ -229,3 +229,27 @@ table tr th:last-child {
         font-size: inherit;
     }
 }
+
+@media screen and (max-width: 620px){
+    .btns-container {
+        flex-direction: column;
+    }
+    .btns {
+    display: flex;
+    margin-top: 10px;
+    }
+
+    .btns-container div {
+        width: 235px;
+    }
+
+    .bag-btn.bag-btn.middle-btn,
+    .bag-btn.bag-btn.last-btn {
+        width: 50%;
+    }
+
+    .small-container {
+        max-width: 95%;
+        font-size: inherit;
+    }
+}
