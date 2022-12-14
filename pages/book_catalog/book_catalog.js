@@ -54,10 +54,10 @@ function createBottomNav() {
     const bottomNav = document.createElement('nav');
     bottomNav.className = 'bottom-navbar';
     bottomNav.innerHTML = `
-    <a href="#home" class="fas fa-home"></a>
-        <a href="#featured" class="fas fa-list"></a>
-        <a href="pages/book_catalog/index.html" class="fas fa-tags"></a>
-        <a href="pages/bag/index.html" class="fa-solid fa-bags-shopping"></a>
+    <a href="../../index.html" class="fas fa-home"></a>
+        <a href="../../index.html#featured" class="fas fa-list"></a>
+        <a href="index.html" class="fas fa-tags"></a>
+        <a href="../bag/index.html" class="fa-solid fa-bags-shopping"></a>
     `;
 
     let fragment = new DocumentFragment();
