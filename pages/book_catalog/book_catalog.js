@@ -33,8 +33,10 @@ function createHeader() {
     header2.className = 'header-2';
     header2.innerHTML = `
     <nav class="navbar">
-                <a href="../../index.html">Catalog</a>
-                <a href="pages/bag/index.html">Bag</a>
+                <a href="../../index.html">Home</a>
+                <a href="../../index.html#featured">Featured</a>
+                <a href="index.html">Catalog</a>
+                <a href="../bag/index.html">Bag</a>
             </nav>
     `;
 
