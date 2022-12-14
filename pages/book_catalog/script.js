@@ -210,7 +210,7 @@ calcBookInBag();
 
 for (shopping_bag of shopping_bags) {
     shopping_bag.onclick = () => {
-        document.location.href = 'pages/bag/index.html';
+        document.location.href = '../bag/index.html';
     }
 }
 
